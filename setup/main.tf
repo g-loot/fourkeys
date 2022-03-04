@@ -1,5 +1,11 @@
 terraform {
   required_version = ">= 1.0"
+
+  backend "gcs" {
+    bucket  = "tf-fourkeys"
+    prefix  = "terraform/state"
+  }
+
   required_providers {
     google = {
       version = "~> 3.85.0"
